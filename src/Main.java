@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Main {
@@ -5,6 +7,11 @@ public class Main {
         var arr = new int[]{2, 2, 3, 3, 3, 7, 7, 7};
         System.out.println(findLucky(arr));
         System.out.println(findLuckyWithoutMap(arr));
+
+        System.out.println("====================================");
+        var sentence = "i love eating burger";
+        var searchWord = "burg";
+        System.out.println("Index of prefix: " + isPrefixOfWord(sentence, searchWord));
     }
 
     //1394. Find Lucky Integer in an Array
@@ -60,7 +67,7 @@ public class Main {
     public static boolean hasPrefix(String prefix, String word){
         if(prefix.length() > word.length())
             return false;
-
+        
         for(int i = 0; i < prefix.length(); i++)
             if(word.charAt(i) != prefix.charAt(i))
                 return false;
